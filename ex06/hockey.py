@@ -118,7 +118,7 @@ class Scoreboard:
         text = font.render(score, True, (255, 255, 255))
         self.blit(text, [20, 100])
 
-class Kabe:  # コートの角のクラス
+class Kabe:  # コートの角のクラス #高橋
 
     def __init__(self, color, xy, scr: Screen):  # pointsは鋭角, 直角, 鋭角の順
         self.sfc = pg.Surface((100, 100))  # 正方形の空のSurface
@@ -222,7 +222,7 @@ def main():
 
     while True:
         scr.blit()
-        for kabe in kabes:
+        for kabe in kabes: #壁を表示 #高橋
             kabe.blit(scr)
         p1.update(scr)
         p2.update(scr)
@@ -256,7 +256,7 @@ def main():
                 else:
                     ball.vx *= -1
                     
-        for kabe in kabes:  # 壁との衝突
+        for kabe in kabes:  # 壁との衝突 #高橋
             if kabe.rct.colliderect(ball.rct):
                 ball.vx = -1 * ball.vx
                 ball.vy = -1 * ball.vy
